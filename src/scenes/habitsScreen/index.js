@@ -1,8 +1,8 @@
 // React + react-native
 import * as React from "react";
-import styles from "_styles/layout";
-import { View, Text } from "react-native";
-import { FlatList } from "react-native-gesture-handler";
+import {View} from "react-native";
+import MyList from "../../components/molecules/flatList";
+import NavBar from "../../components/molecules/navBar";
 
 const HabitsScreen = ({ navigation }) => {
   const habits = [
@@ -20,19 +20,11 @@ const HabitsScreen = ({ navigation }) => {
     },
   ]
   return (
-    <View style={styles.container}>
-      <FlatList
-        data={habits}
-        renderItem={(obj) => {
-          return (
-              <View style={styles.cardList}>
-                <Text style={styles.cardText}>{obj.item.title}</Text>
-              </View>
-          );
-        }}
-        keyExtractor={(item) => { return item.id.toString(); }}
-    />
+    <View>
+<MyList array = {habits} />
+    <NavBar />
     </View>
+    
   );
 };
 

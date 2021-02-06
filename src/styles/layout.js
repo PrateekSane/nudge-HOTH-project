@@ -9,13 +9,6 @@ const styles = StyleSheet.create({
   icons: {
     flexDirection: "row",
     justifyContent: "space-evenly",
-  },
-  cardList: {
-    paddingTop: 20,
-    paddingBottom: 20,
-  },
-  cardText: {
-    fontSize: 32,
   }
 });
 

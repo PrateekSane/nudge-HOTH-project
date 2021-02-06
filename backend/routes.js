@@ -182,4 +182,4 @@ Router.route("/loginUser/:id").get(async (req, res) => {
   }
 });
 
-module.exports = router;
+module.exports = Router;

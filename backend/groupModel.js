@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
-const { useColorScheme } = require("react-native");
-const Schema = mognoose.Schema;
+const Schema = mongoose.Schema;
 
 const groupModel = new Schema({
   name: { type: String, required: true },

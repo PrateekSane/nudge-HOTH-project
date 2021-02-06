@@ -3,7 +3,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const userRoute = require("./routes.js");
 
-require("dotenv").config;
+require("dotenv").config({ path: './.env' });
 
 const app = express();
 app.use(cors());
@@ -18,7 +18,7 @@ mongoose.connect(uri, {
   useUnifiedTopology: true,
 });
 
-const connection = moongose.connection;
+const connection = mongoose.connection;
 connection.once("open", () => {
   console.log("connected to mongoDB");
 });

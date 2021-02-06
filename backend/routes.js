@@ -7,10 +7,10 @@ Router.route("/getNudged").put(async (req, res) => {
   try {
     const username = req.username;
     const message = req.message;
-    const currUser = await User.findOneAndUpdate({
+    const currUser = await User.findOneAndUpdate(
       { username: username },
       { $push: { nudges: message } }
-    })
+    )
     if (!currUser) return res.status(404).json({
       error: "User not found"
     })
@@ -29,10 +29,10 @@ Router.route("/addFriend").put(async (req, res) => {
   try {
     const username = req.username;
     const friendUsername = req.friendUsername;
-    const currUser = await User.findOneAndUpdate({
+    const currUser = await User.findOneAndUpdate(
       { username: username },
       { $push: { friends: friendUsername } }
-    })
+    )
     if (!currUser) return res.status(404).json({
       error: "User not found"
     })
@@ -69,17 +69,17 @@ Router.route("/addUserToGroup").put((req, res) => {
   try {
     const username = req.username;
     const groupId = req.group;
-    const curGroup = Group.findOneAndUpdate({
+    const curGroup = Group.findOneAndUpdate(
       { _id: groupId },
       { $push: { users: username } }
-    });
+    );
     if (!curGroup) return res.status(404).json({
       error: "Group not found"
     })
-    const curUser = User.findOneAndUpdate({
+    const curUser = User.findOneAndUpdate(
       { username: username },
       { $push: { groups: mongoose.Types.ObjectId(groupId) } }
-    });
+    );
     if (!curUser) return res.status(404).json({
       error: "User not found"
     })
@@ -94,6 +94,7 @@ Router.route("/addUserToGroup").put((req, res) => {
       error: "Error adding to group. Please try again."
     })
   }
+})
 
 //POST create new group
 Router.route("/newGroup")
@@ -180,3 +181,5 @@ Router.route("/loginUser/:id").get(async (req, res) => {
     })
   }
 });
+
+module.exports = router;

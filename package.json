@@ -11,12 +11,8 @@
     "@react-native-community/masked-view": "0.1.10",
     "@react-navigation/native": "^5.9.2",
     "@react-navigation/stack": "^5.14.2",
-<<<<<<< HEAD
-    "expo": "^40.0.1",
-=======
     "cors": "^2.8.5",
     "expo": "~40.0.0",
->>>>>>> d4307b7... new routes and drive by fixes
     "expo-status-bar": "~1.0.3",
     "express": "^4.17.1",
     "mongoose": "^5.11.15",

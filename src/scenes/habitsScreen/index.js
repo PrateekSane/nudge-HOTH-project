@@ -1,13 +1,30 @@
 // React + react-native
 import * as React from "react";
-import styles from "_styles/layout";
-import { View, Text } from "react-native";
+import {View} from "react-native";
+import MyList from "../../components/molecules/flatList";
+import NavBar from "../../components/molecules/navBar";
 
 const HabitsScreen = ({ navigation }) => {
+  const habits = [
+    {
+      id:0,
+      title:" drink water"
+    },
+    {
+      id:1,
+      title:" work out"
+    },
+    {
+      id:2,
+      title:" sleep well"
+    },
+  ]
   return (
-    <View style={styles.container}>
-      <Text>My Nudges</Text>
+    <View>
+<MyList array = {habits} />
+    <NavBar />
     </View>
+    
   );
 };
 

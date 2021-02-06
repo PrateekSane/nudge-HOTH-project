@@ -8,8 +8,8 @@ const styles = StyleSheet.create({
   },
   icons: {
     flexDirection: "row",
-    justifyContent: "center",
-  },
+    justifyContent: "space-evenly",
+  }
 });
 
 export default styles;

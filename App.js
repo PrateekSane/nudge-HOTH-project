@@ -1,6 +1,7 @@
 // React + react-native
 import * as React from "react";
-import { Button, Text } from "react-native";
+import { View, Button, Text } from "react-native";
+import StyledButton from "_atoms/StyledButton";
 
 //Navigation
 import "react-native-gesture-handler";
@@ -26,7 +27,7 @@ const App = () => {
 
 const HomeScreen = ({ navigation }) => {
   return (
-    <Button
+    <StyledButton
       title="Go to Jane's profile"
       onPress={() => navigation.navigate("Profile", { name: "Jane" })}
     />

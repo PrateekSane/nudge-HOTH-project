@@ -1,6 +1,13 @@
 // React + react-native
 import * as React from "react";
+import styles from "_styles/layout";
 import { View, Button, Text, StyleSheet, TouchableOpacity } from "react-native";
+import StyledButton from "_atoms/StyledButton";
+
+//Icons
+import { MaterialIcons } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
 
 const ProfileScreen = ({ navigation }) => {
   return (

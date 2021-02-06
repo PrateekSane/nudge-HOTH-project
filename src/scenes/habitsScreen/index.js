@@ -10,3 +10,5 @@ const HabitsScreen = ({ navigation }) => {
     </View>
   );
 };
+
+export default HabitsScreen;

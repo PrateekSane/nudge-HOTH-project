@@ -4,10 +4,11 @@ import { View, Button, Text, StyleSheet, TouchableOpacity } from "react-native";
 import StyledButton from "_atoms/StyledButton";
 
 // Pages
-import * as scenes from "_scenes";
-
-// Styles
-import styles from "_styles/layout";
+import FriendsScreen from "_scenes/friendsScreen";
+import HabitsScreen from "_scenes/habitsScreen";
+import HomeScreen from "_scenes/homeScreen";
+import ProfileScreen from "_scenes/profileScreen";
+import NudgeScreen from "_scenes/nudgeScreen";
 
 //Navigation
 import "react-native-gesture-handler";
@@ -28,12 +29,12 @@ const App = () => {
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{ title: "Welcome 2" }}
+          options={{ title: "Welcome 4" }}
         />
-        <Stack.Screen name="Profile" component={scenes.ProfileScreen} />
-        <Stack.Screen name="Nudge" component={scenes.NudgeScreen} />
-        <Stack.Screen name="Habits" component={scenes.HabitsScreen} />
-        <Stack.Screen name="Friends" component={scenes.FriendsScreen} />
+        <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen name="Nudge" component={NudgeScreen} />
+        <Stack.Screen name="Habits" component={HabitsScreen} />
+        <Stack.Screen name="Friends" component={FriendsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

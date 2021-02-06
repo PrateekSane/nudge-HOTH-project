@@ -10,17 +10,17 @@ Router.route("/getNudged").put(async (req, res) => {
     const currUser = await User.findOneAndUpdate(
       { username: username },
       { $push: { nudges: message } }
-    )
-    if (!currUser) return res.status(404).json({
-      error: "User not found"
-    })
-    return res.status(200).json({ currUser })
-  }
-  catch (error) {
-    console.error(error)
+    );
+    if (!currUser)
+      return res.status(404).json({
+        error: "User not found",
+      });
+    return res.status(200).json({ currUser });
+  } catch (error) {
+    console.error(error);
     res.status(500).json({
-      error: "Error adding friend. Please try again."
-    })
+      error: "Error adding friend. Please try again.",
+    });
   }
 });
 
@@ -32,17 +32,17 @@ Router.route("/addFriend").put(async (req, res) => {
     const currUser = await User.findOneAndUpdate(
       { username: username },
       { $push: { friends: friendUsername } }
-    )
-    if (!currUser) return res.status(404).json({
-      error: "User not found"
-    })
-    return res.status(200).json({ currUser })
-  }
-  catch (error) {
-    console.error(error)
+    );
+    if (!currUser)
+      return res.status(404).json({
+        error: "User not found",
+      });
+    return res.status(200).json({ currUser });
+  } catch (error) {
+    console.error(error);
     res.status(500).json({
-      error: "Error adding friend. Please try again."
-    })
+      error: "Error adding friend. Please try again.",
+    });
   }
 });
 
@@ -50,17 +50,17 @@ Router.route("/addFriend").put(async (req, res) => {
 Router.route("/getUserInfo").get(async (req, res) => {
   try {
     const username = req.username;
-    const currUser = await User.findOne({ username: username })
-    if (!currUser) return res.status(404).json({
-      error: "User not found"
-    })
-    return res.status(200).json({ currUser })
-  }
-  catch (error) {
-    console.error(error)
+    const currUser = await User.findOne({ username: username });
+    if (!currUser)
+      return res.status(404).json({
+        error: "User not found",
+      });
+    return res.status(200).json({ currUser });
+  } catch (error) {
+    console.error(error);
     res.status(500).json({
-      error: "Error getting friends. Please try again."
-    })
+      error: "Error getting friends. Please try again.",
+    });
   }
 });
 
@@ -73,28 +73,29 @@ Router.route("/addUserToGroup").put((req, res) => {
       { _id: groupId },
       { $push: { users: username } }
     );
-    if (!curGroup) return res.status(404).json({
-      error: "Group not found"
-    })
+    if (!curGroup)
+      return res.status(404).json({
+        error: "Group not found",
+      });
     const curUser = User.findOneAndUpdate(
       { username: username },
       { $push: { groups: mongoose.Types.ObjectId(groupId) } }
     );
-    if (!curUser) return res.status(404).json({
-      error: "User not found"
-    })
+    if (!curUser)
+      return res.status(404).json({
+        error: "User not found",
+      });
     return res.status(200).json({
       group: curGroup,
       user: curUser,
-    })
-  }
-  catch (error) {
-    console.error(error)
+    });
+  } catch (error) {
+    console.error(error);
     res.status(500).json({
-      error: "Error adding to group. Please try again."
-    })
+      error: "Error adding to group. Please try again.",
+    });
   }
-})
+});
 
 //POST create new group
 Router.route("/newGroup")
@@ -102,22 +103,22 @@ Router.route("/newGroup")
     try {
       const name = req.name;
       const users = req.users;
-      if (!users) return res.status(400).json({
-        error: "Users cannot be empty"
-      })
+      if (!users)
+        return res.status(400).json({
+          error: "Users cannot be empty",
+        });
       // Replace this with string of usernames
-      if (!name) name = "Unnamed group"
+      if (!name) name = "Unnamed group";
       const newGroup = await new Group({
         name,
         users,
-      }).save()
-      return res.status(201).json({ newGroup })
-    }
-    catch (error) {
-      console.error(error)
+      }).save();
+      return res.status(201).json({ newGroup });
+    } catch (error) {
+      console.error(error);
       res.status(500).json({
-        error: "Error creating group. Please try again."
-      })
+        error: "Error creating group. Please try again.",
+      });
     }
   })
   .put((req, res) => {
@@ -139,23 +140,21 @@ Router.route("/newUser").post(async (req, res) => {
   try {
     const username = req.username;
     const password = req.password;
-    if (!username || !password)
-    {
+    if (!username || !password) {
       return res.status(400).json({
-        error: "Username or password cannot be empty"
-      })
+        error: "Username or password cannot be empty",
+      });
     }
     const newUser = await new User({
       username,
       password,
-    }).save()
-    return res.status(200).json({ newUser })
-  }
-  catch (error) {
-    console.error(error)
+    }).save();
+    return res.status(200).json({ newUser });
+  } catch (error) {
+    console.error(error);
     res.status(500).json({
-      error: "Error signing up user. Please try again."
-    })
+      error: "Error signing up user. Please try again.",
+    });
   }
 });
 
@@ -164,21 +163,21 @@ Router.route("/loginUser/:id").get(async (req, res) => {
   try {
     const username = req.username;
     const user = await User.findOne({ username: username });
-    if (!user) return res.status(404).json({
-      error: "User not found"
-    })
+    if (!user)
+      return res.status(404).json({
+        error: "User not found",
+      });
     if (user.password == req.password) {
       return res.status(200).json({ user });
     }
     return res.status(401).json({
-      error: "Incorrect password. Please try again."
-    })
-  }
-  catch (error) {
-    console.error(error)
+      error: "Incorrect password. Please try again.",
+    });
+  } catch (error) {
+    console.error(error);
     res.status(500).json({
-      error: "Error logging in. Please try again."
-    })
+      error: "Error logging in. Please try again.",
+    });
   }
 });
 

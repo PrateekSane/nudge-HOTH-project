@@ -21,18 +21,17 @@ const HabitsScreen = ({ navigation }) => {
   ]
   return (
     <View style={styles.container}>
-      <Text>My Nudges</Text>
       <FlatList
-                data={habits}
-                renderItem={(obj) => {
-                    return (
-                        <View>
-                                <Text>{obj.item.title}</Text>
-                        </View>
-                    );
-                }}
-                keyExtractor={(item) => { return item.id.toString(); }}
-            />
+        data={habits}
+        renderItem={(obj) => {
+          return (
+              <View style={styles.cardList}>
+                <Text style={styles.cardText}>{obj.item.title}</Text>
+              </View>
+          );
+        }}
+        keyExtractor={(item) => { return item.id.toString(); }}
+    />
     </View>
   );
 };

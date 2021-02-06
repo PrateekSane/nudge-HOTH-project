@@ -8,8 +8,15 @@ const styles = StyleSheet.create({
   },
   icons: {
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "space-evenly",
   },
+  cardList: {
+    paddingTop: 20,
+    paddingBottom: 20,
+  },
+  cardText: {
+    fontSize: 32,
+  }
 });
 
 export default styles;

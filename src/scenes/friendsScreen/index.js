@@ -45,14 +45,13 @@ const FriendsScreen = ({ navigation }) => {
           multiline={true}
         />
 
-        <StyledButton onPress={() => onSubmit()} />
 
         {userFound ? (
           <View style={styles.container}>
             <Text style={styles.text}>Friend Found!</Text>
           </View>
         ) : (
-          ""
+          <Text>"{''}</Text>
         )}
         <TouchableOpacity>
           <Feather name="search" size={32} color="black" />

@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: "500",
     padding: 16,
+    marginTop: 40
   },
 });
 

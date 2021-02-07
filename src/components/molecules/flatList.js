@@ -30,8 +30,8 @@ const styles = StyleSheet.create({
   cardList: {
     padding: 20,
     marginTop: 16,
-    borderColor: "gray",
-    borderBottomWidth: 1,
+    backgroundColor: "white",
+    borderRadius: 15
   },
 
   cardText: {

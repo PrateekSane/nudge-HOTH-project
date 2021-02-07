@@ -26,7 +26,7 @@ const NudgeScreen = ({ navigation }) => {
         <NavLayout navigation={navigation}>
           <View style={styles.touchableWrapper}>
             <TouchableOpacity>
-            <AntDesign name="pluscircleo" size={24} color="black" />
+            <AntDesign name="pluscircleo" size={32} color="gray" />
             </TouchableOpacity>
           </View>
           <View style={styles.container}>

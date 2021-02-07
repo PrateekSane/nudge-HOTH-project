@@ -1,14 +1,12 @@
 // React + react-native
 import * as React from "react";
 import styles from "_styles/layout";
-import { View, Button, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View } from "react-native";
 import StyledButton from "_atoms/StyledButton";
 import NavLayout from "_utils/navLayout";
 
 //Icons
-import { MaterialIcons } from "@expo/vector-icons";
-import { Ionicons } from "@expo/vector-icons";
-import { Feather } from "@expo/vector-icons";
+import NavBar from "../../components/molecules/navBar";
 
 const ProfileScreen = ({ navigation }) => {
   return (
@@ -26,8 +24,8 @@ const ProfileScreen = ({ navigation }) => {
         title="Find Friends"
         onPress={() => navigation.navigate("Friends")}
       />
-      {/*implement icons*/}
-    </NavLayout>
+      <NavBar/>
+    </View>
   );
 };
 

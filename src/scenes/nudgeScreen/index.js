@@ -1,13 +1,31 @@
 // React + react-native
 import * as React from "react";
-import { View, Text } from "react-native";
-import NavLayout from "_utils/navLayout";
+
+import {View} from "react-native"
+import MyList from "../../components/molecules/flatList";
+import NavBar from "../../components/molecules/navBar";
 
 const NudgeScreen = ({ navigation }) => {
+  const nudges = [
+    {
+      id:0,
+      title: "Thomas"
+    },
+    {
+      id:1,
+      title:"Jennie"
+    },
+    {
+      id:2,
+      title:"Jacob"
+    },
+  ]
   return (
-    <NavLayout>
-      <Text>My Nudges</Text>
-    </NavLayout>
+
+    <View>
+    <MyList array ={nudges} />
+    <NavBar />
+    </View>
   );
 };
 

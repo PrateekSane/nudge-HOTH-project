@@ -1,5 +1,6 @@
 // React + react-native
 import * as React from "react";
+
 import {View} from "react-native"
 import MyList from "../../components/molecules/flatList";
 import NavBar from "../../components/molecules/navBar";
@@ -20,11 +21,11 @@ const NudgeScreen = ({ navigation }) => {
     },
   ]
   return (
+
     <View>
     <MyList array ={nudges} />
     <NavBar />
     </View>
-    
   );
 };
 

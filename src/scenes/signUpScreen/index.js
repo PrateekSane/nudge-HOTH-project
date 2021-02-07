@@ -1,7 +1,6 @@
 // React + react-native
 import React,{useState} from "react";
-import styles from "_styles/layout";
-import { TextInput, View, Text } from "react-native";
+import { StyleSheet,TextInput, View, Text } from "react-native";
 import StyledButton from "_atoms/StyledButton";
 
 const SignUpScreen = ({ navigation }) => {
@@ -9,7 +8,10 @@ const SignUpScreen = ({ navigation }) => {
   const [password, setPassword] = useState('');
     return (
         <View>
-        <Text style={styles.text}>Create Your Account</Text>
+          <View style={styles.container}>
+          <Text style={styles.text}>Create Your Account</Text>
+          </View>
+
         <TextInput
           style={styles.textfield}
           onChangeText={ text => {setUsername(text)}}
@@ -32,5 +34,30 @@ const SignUpScreen = ({ navigation }) => {
         
     );
   };
+
+  const styles = StyleSheet.create({
+    container: {
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    text: {
+      fontSize: 28,
+      fontWeight: "700",
+      padding: 10,
+      margin: 48,
+      alignItems: "center"
+    },
+    textfield: {
+      height: 60,
+      padding: 30,
+      marginBottom: 20,
+      marginLeft: 48,
+      marginRight: 48,
+      backgroundColor: "white",
+      color: "black",
+      borderRadius: 15,
+    }
+  });
 
   export default SignUpScreen;

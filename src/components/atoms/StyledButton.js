@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "#F6F1FB",
-    fontSize: 14,
+    fontSize: 16,
     letterSpacing: 0.8,
     textTransform: "uppercase",
   },

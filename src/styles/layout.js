@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
   },
   logo: {
     fontSize: 64,
+    fontWeight: "900",
     color: "#8E97FD"
   },
   textfield: {

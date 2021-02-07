@@ -1,7 +1,7 @@
 // React + react-native
 import * as React from "react";
 
-import { View } from "react-native";
+import { Text, StyleSheet, View } from "react-native";
 import MyList from "../../components/molecules/flatList";
 import NavLayout from "_utils/navLayout";
 
@@ -21,10 +21,28 @@ const NudgeScreen = ({ navigation }) => {
     },
   ];
   return (
-    <NavLayout navigation={navigation}>
-      <MyList array={nudges} />
-    </NavLayout>
+        <NavLayout navigation={navigation}>
+          <View style={styles.container}>
+        <Text style={styles.text}>My Nudges</Text>
+        </View>
+
+          <MyList array={nudges} />
+        </NavLayout>
+    
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  text: {
+    fontSize: 28,
+    fontWeight: "500",
+    padding: 16,
+  },
+});
 
 export default NudgeScreen;

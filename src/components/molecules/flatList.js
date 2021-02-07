@@ -20,26 +20,22 @@ const MyList = (props) => {
 };
 
 const styles = StyleSheet.create({
-  button: {
-    alignItems: "center",
+  container: {
+    flex: 1,
+    flexDirection: "column",
     justifyContent: "center",
-    backgroundColor: "#8E97FD",
+    alignItems: "stretch",
     margin: 20,
-    height: 63,
-    borderRadius: 38,
-  },
-  text: {
-    color: "#F6F1FB",
-    fontSize: 14,
-    letterSpacing: 0.8,
-    textTransform: "uppercase",
   },
   cardList: {
     padding: 20,
-    borderBottomWidth:1,
+    marginTop: 16,
+    borderColor: "gray",
+    borderBottomWidth: 1,
   },
+
   cardText: {
-    fontSize: 20,
+    fontSize: 24,
   }
 });
 

@@ -28,9 +28,12 @@ const NavBar = (props) => {
 
 const styles = StyleSheet.create({
   icons: {
+    flex: 1,
     flexDirection: "row",
     justifyContent: "space-evenly",
-    alignItems: "flex-end",
+    alignItems: "stretch",
+    backgroundColor: "white",
+    padding: 20,
   },
   button: {
     alignItems: "center",

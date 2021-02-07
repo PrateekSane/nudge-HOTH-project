@@ -11,7 +11,7 @@ import ProfileScreen from "_scenes/profileScreen";
 import NudgeScreen from "_scenes/nudgeScreen";
 import SignInScreen from "_scenes/signInScreen";
 import SignUpScreen from "_scenes/signUpScreen";
-
+import CreateNudgeScreen from "_scenes/createNudgeScreen";
 
 //Navigation
 import "react-native-gesture-handler";
@@ -30,11 +30,24 @@ const App = () => {
           options={{ title: "Welcome 6" }}
         />
         <Stack.Screen name="Profile" component={ProfileScreen} />
-        <Stack.Screen name="Nudge" component={NudgeScreen} options={{ title: "Nudges" }} />
+        <Stack.Screen
+          name="Nudge"
+          component={NudgeScreen}
+          options={{ title: "Nudges" }}
+        />
+        <Stack.Screen name="CreateNudge" component={CreateNudgeScreen} />
         <Stack.Screen name="Habits" component={HabitsScreen} />
         <Stack.Screen name="Friends" component={FriendsScreen} />
-        <Stack.Screen name="SignIn" component={SignInScreen} options={{ title: "Log In" }}/>
-        <Stack.Screen name="SignUp" component={SignUpScreen} options={{ title: "Sign Up" }}/>
+        <Stack.Screen
+          name="SignIn"
+          component={SignInScreen}
+          options={{ title: "Log In" }}
+        />
+        <Stack.Screen
+          name="SignUp"
+          component={SignUpScreen}
+          options={{ title: "Sign Up" }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

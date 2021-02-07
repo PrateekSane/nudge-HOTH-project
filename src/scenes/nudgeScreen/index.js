@@ -5,7 +5,8 @@ import { Text, StyleSheet, View } from "react-native";
 import MyList from "../../components/molecules/flatList";
 import NavLayout from "_utils/navLayout";
 
-
+import { AntDesign } from '@expo/vector-icons';
+import { TouchableOpacity } from "react-native-gesture-handler";
 const NudgeScreen = ({ navigation }) => {
   const nudges = [
     {
@@ -23,6 +24,11 @@ const NudgeScreen = ({ navigation }) => {
   ];
   return (
         <NavLayout navigation={navigation}>
+          <View style={styles.touchableWrapper}>
+            <TouchableOpacity>
+            <AntDesign name="pluscircleo" size={24} color="black" />
+            </TouchableOpacity>
+          </View>
           <View style={styles.container}>
         <Text style={styles.text}>My Nudges</Text>
         </View>
@@ -34,6 +40,11 @@ const NudgeScreen = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
+  touchableWrapper: {
+    margin:16,
+    flexDirection:"row",
+    justifyContent:"flex-end"
+  },
   container: {
     flexDirection: "column",
     justifyContent: "center",
@@ -42,8 +53,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 28,
     fontWeight: "500",
-    padding: 16,
-    marginTop: 40
+    padding: 8,
   },
 });
 

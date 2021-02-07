@@ -32,7 +32,7 @@ const App = () => {
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{ title: "Welcome 5" }}
+          options={{ title: "Welcome 6" }}
         />
         <Stack.Screen name="Profile" component={ProfileScreen} />
         <Stack.Screen name="Nudge" component={NudgeScreen} options={{ title: "Nudges" }} />

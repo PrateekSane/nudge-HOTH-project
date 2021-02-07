@@ -30,7 +30,7 @@ const NudgeScreen = ({ navigation }) => {
             name="pluscircleo"
             size={24}
             color="black"
-            onClick={() => Navigation.navigate("CreateNudge")}
+            onPress={() => navigation.navigate("CreateNudge")}
           />
         </TouchableOpacity>
       </View>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Text, StyleSheet, View } from "react-native";
+import { Text, TextInput, StyleSheet, View } from "react-native";
+import StyledButton from "_atoms/StyledButton";
 
 const CreateNudgeScreen = ({ navigation }) => {
   const [nudgeTo, setNudgeTo] = useState("");

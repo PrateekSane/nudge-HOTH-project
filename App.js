@@ -11,7 +11,7 @@ import ProfileScreen from "_scenes/profileScreen";
 import NudgeScreen from "_scenes/nudgeScreen";
 import SignInScreen from "_scenes/signInScreen";
 import SignUpScreen from "_scenes/signUpScreen";
-import CreateNudge from "_scenes/createNudgeScreen";
+import CreateNudgeScreen from "_scenes/createNudgeScreen";
 
 //Navigation
 import "react-native-gesture-handler";

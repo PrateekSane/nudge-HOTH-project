@@ -1,9 +1,10 @@
-import React from "react";
-
+import React, { useState } from "react";
 import { Text, StyleSheet, View } from "react-native";
-const [nudgeTo, setNudgeTo] = useState("");
-const [msg, setMsg] = useState("");
+
 const CreateNudgeScreen = ({ navigation }) => {
+  const [nudgeTo, setNudgeTo] = useState("");
+  const [msg, setMsg] = useState("");
+
   return (
     <View style={styles.background}>
       <View style={styles.container}>

@@ -9,6 +9,22 @@ const styles = StyleSheet.create({
   icons: {
     flexDirection: "row",
     justifyContent: "space-evenly",
+  },
+  text: {
+    fontSize: 20,
+    padding: 10,
+  },
+  logo: {
+    fontSize: 64,
+    color: "#8E97FD"
+  },
+  textfield: {
+    height: 40,
+    padding: 30,
+    marginTop: 20,
+    backgroundColor: "white",
+    color: "black",
+    borderRadius: 15,
   }
 });
 

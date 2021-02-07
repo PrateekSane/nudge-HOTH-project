@@ -5,6 +5,7 @@ import { Text, StyleSheet, View } from "react-native";
 import MyList from "../../components/molecules/flatList";
 import NavLayout from "_utils/navLayout";
 
+
 const NudgeScreen = ({ navigation }) => {
   const nudges = [
     {

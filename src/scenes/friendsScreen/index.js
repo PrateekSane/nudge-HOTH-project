@@ -3,6 +3,9 @@ import * as React from "react";
 import { TextInput, StyleSheet, View, Text } from "react-native";
 import MyList from "../../components/molecules/flatList";
 import NavLayout from "_utils/navLayout";
+import { TouchableOpacity } from "react-native-gesture-handler";
+
+import { Feather } from "@expo/vector-icons";
 
 const FriendsScreen = ({ navigation }) => {
     const nudges = [
@@ -26,13 +29,18 @@ const FriendsScreen = ({ navigation }) => {
             <View style={styles.container}>
           <Text style={styles.text}>Find Friends</Text>
           </View>
-          <TextInput
-            style={styles.textfield}
-            onChangeText={ text => {setName(text)}}
-            placeholder="username"
-            value={name}
-            multiline={true}
-          />
+          <View style={styles.wrapper}>
+            <TextInput
+                style={styles.textfield}
+                onChangeText={ text => {setName(text)}}
+                placeholder="username"
+                value={name}
+                multiline={true}
+              />
+            <TouchableOpacity>
+              <Feather name="search" size={32} color="black" />
+            </TouchableOpacity>
+          </View>
             <MyList array={nudges} />
           </NavLayout>
       
@@ -40,10 +48,19 @@ const FriendsScreen = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
+
   container: {
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+  },
+  wrapper: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    alignContent: "stretch",
+    marginRight: 20,
+    marginLeft:20
   },
   text: {
     fontSize: 28,
@@ -52,11 +69,13 @@ const styles = StyleSheet.create({
     margin: 40,
   },
   textfield: {
+    flexGrow: 1,
     height: 60,
+    // width: "80%",
     padding: 30,
-    marginLeft: 48,
-    marginRight: 48,
-    backgroundColor: "white",
+    // marginLeft: 32,
+    marginRight: 20,
+    backgroundColor: "#E6E6E6",
     color: "black",
     borderRadius: 50,
   }

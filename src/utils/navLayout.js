@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     justifyContent: "space-evenly",
+    backgroundColor:"#F8F4EE",
   },
   main: {
     flex: 11,

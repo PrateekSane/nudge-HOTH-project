@@ -7,7 +7,7 @@ const SignUpScreen = ({ navigation }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
     return (
-        <View>
+        <View style={styles.background}>
           <View style={styles.container}>
           <Text style={styles.text}>Create Your Account</Text>
           </View>
@@ -36,6 +36,10 @@ const SignUpScreen = ({ navigation }) => {
   };
 
   const styles = StyleSheet.create({
+    background: {
+      backgroundColor: "#F8F4EE",
+      flex: 1,
+    },
     container: {
       flexDirection: "column",
       justifyContent: "center",
@@ -54,8 +58,7 @@ const SignUpScreen = ({ navigation }) => {
       marginBottom: 20,
       marginLeft: 48,
       marginRight: 48,
-      backgroundColor: "white",
-      color: "black",
+      backgroundColor: "#E6E6E6",
       borderRadius: 15,
     }
   });

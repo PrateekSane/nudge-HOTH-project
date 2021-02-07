@@ -8,7 +8,7 @@ const SignInScreen = ({ navigation }) => {
   const [password, setPassword] = React.useState('');
 
     return (
-        <View>
+        <View style={styles.background}>
         <View style={styles.container}>
         <Text style={styles.text}>Welcome Back!</Text>
         </View>
@@ -41,6 +41,11 @@ const SignInScreen = ({ navigation }) => {
     );
   };
   const styles = StyleSheet.create({
+    background: {
+      backgroundColor: "#F8F4EE",
+
+      flex: 1,
+    },
     container: {
       flexDirection: "column",
       justifyContent: "center",
@@ -59,7 +64,7 @@ const SignInScreen = ({ navigation }) => {
       marginBottom: 20,
       marginLeft: 48,
       marginRight: 48,
-      backgroundColor: "white",
+      backgroundColor: "#E6E6E6",
       color: "black",
       borderRadius: 15,
     }

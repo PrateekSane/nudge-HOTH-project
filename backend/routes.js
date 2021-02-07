@@ -90,41 +90,47 @@ Router.route("/addUserToGroup").put(async (req, res) => {
 });
 
 //POST create new group
-Router.route("/newGroup")
-  .post(async (req, res) => {
-    try {
-      const name = req.name;
-      const users = req.users;
-      if (!users)
-        return res.status(400).json({
-          error: "Users cannot be empty",
-        });
-      // Replace this with string of usernames
-      if (!name) name = "Unnamed group";
-      const newGroup = await new Group({
-        name,
-        users,
-      }).save();
-  })
-  .put((req, res) => {
-    const users = req.users;
-    users.forEach((curUser) => {
-      const user = User.findOne({ username: curUser });
-      user.groups.push(req.name);
-      user
-        .save()
-        .then(() => res.json("user added to group"))
-        .catch((err) =>
-          res.status(400).json(`${user.username} not added to group` + err)
-        );
+
+Router.route("/newGroup").post(async (req, res) => {
+  try {
+    const name = req.body.name;
+    const users = req.body.users;
+    if (!users)
+      return res.status(400).json({
+        error: "Users cannot be empty",
+      });
+    // Replace this with string of usernames
+    if (!name) name = "Unnamed group";
+    const newGroup = await new Group({
+      name,
+      users,
+    }).save();
+    return res.status(201).json({ newGroup });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      error: "Error creating group. Please try again.",
+
     });
+  }
+
+  users.forEach((curUser) => {
+    const user = User.findOne({ username: curUser });
+    user.groups.push(req.body.name);
+    user
+      .save()
+      .then(() => res.json("user added to group"))
+      .catch((err) =>
+        res.status(400).json(`${user.username} not added to group` + err)
+      );
   });
+});
 
 //POST create new user
 Router.route("/newUser").post(async (req, res) => {
   try {
-    const username = req.username;
-    const password = req.password;
+    const username = req.body.username;
+    const password = req.body.password;
     if (!username || !password) {
       return res.status(400).json({
         error: "Username or password cannot be empty",
@@ -144,15 +150,15 @@ Router.route("/newUser").post(async (req, res) => {
 });
 
 //GET login for existing user
-Router.route("/loginUser/:id").get(async (req, res) => {
+Router.route("/loginUser").get(async (req, res) => {
   try {
-    const username = req.username;
+    const username = req.body.username;
     const user = await User.findOne({ username: username });
     if (!user)
       return res.status(404).json({
         error: "User not found",
       });
-    if (user.password == req.password) {
+    if (user.password == req.body.password) {
       return res.status(200).json({ user });
     }
     return res.status(401).json({

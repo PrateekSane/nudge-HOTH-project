@@ -3,7 +3,7 @@ import React from "react";
 import { Text, StyleSheet, View } from "react-native";
 const [nudgeTo, setNudgeTo] = useState("");
 const [msg, setMsg] = useState("");
-const NudgeScreen = ({ navigation }) => {
+const CreateNudgeScreen = ({ navigation }) => {
   return (
     <View style={styles.background}>
       <View style={styles.container}>
@@ -54,4 +54,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default NudgeScreen;
+export default CreateNudgeScreen;

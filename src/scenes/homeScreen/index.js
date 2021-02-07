@@ -2,7 +2,7 @@
 import * as React from "react";
 import StyledButton from "_atoms/StyledButton";
 import Layout from "_utils/layout";
-import {StyleSheet, TextInput, View, Text, Button, } from "react-native";
+import { StyleSheet, TextInput, View, Text, Button } from "react-native";
 
 const HomeScreen = ({ navigation }) => {
   return (
@@ -14,10 +14,7 @@ const HomeScreen = ({ navigation }) => {
         onPress={() => navigation.navigate("SignIn")}
       />
       <Text>DON’T HAVE AN ACCOUNT?</Text>
-      <Button 
-        title="Sign Up" 
-        onPress={() => navigation.navigate("SignUp")}
-      />
+      <Button title="Sign Up" onPress={() => navigation.navigate("SignUp")} />
     </View>
   );
 };
@@ -28,17 +25,17 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor:"#F8F4EE",
+    backgroundColor: "#F8F4EE",
   },
   text: {
     fontSize: 20,
     padding: 10,
-    marginBottom: 20
+    marginBottom: 20,
   },
   logo: {
     fontSize: 64,
     fontWeight: "900",
     color: "#8E97FD",
-  }
+  },
 });
 export default HomeScreen;

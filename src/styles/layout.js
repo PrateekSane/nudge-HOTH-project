@@ -11,6 +11,23 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-evenly",
   },
+  text: {
+    fontSize: 20,
+    padding: 10,
+  },
+  logo: {
+    fontSize: 64,
+    fontWeight: "900",
+    color: "#8E97FD"
+  },
+  textfield: {
+    height: 40,
+    padding: 30,
+    marginTop: 20,
+    backgroundColor: "white",
+    color: "black",
+    borderRadius: 15,
+  }
 });
 
 export default styles;

@@ -1,6 +1,6 @@
 // React + react-native
 import * as React from "react";
-import { View } from "react-native";
+import { Text,View, StyleSheet} from "react-native";
 import MyList from "_molecules/flatList";
 import NavLayout from "_utils/navLayout";
 
@@ -20,10 +20,27 @@ const HabitsScreen = ({ navigation }) => {
     },
   ];
   return (
-    <NavLayout navigation={navigation}>
-      <MyList array={habits} />
-    </NavLayout>
+      <NavLayout navigation={navigation}>
+      <View style={styles.container}>
+        <Text style={styles.text}>My Habits</Text>
+        </View>
+          <MyList array={habits} />
+      </NavLayout> 
+    
   );
 };
 
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  text: {
+    fontSize: 28,
+    fontWeight: "500",
+    padding: 16,
+    marginTop: 40
+  },
+});
 export default HabitsScreen;

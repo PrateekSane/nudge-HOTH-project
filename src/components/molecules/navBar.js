@@ -15,11 +15,11 @@ const NavBar = (props) => {
       <TouchableOpacity onPress={() => props.navigation.navigate("Habits")}>
         <Ionicons name="water-outline" size={24} color="black" />
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => props.navigation.navigate("Friends")}>
         {/* to do */}
         <Feather name="search" size={24} color="black" />
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => props.navigation.navigate("Friends")}>
+      <TouchableOpacity onPress={() => props.navigation.navigate("Profile")}>
         <Feather name="user" size={24} color="black" />
       </TouchableOpacity>
     </View>

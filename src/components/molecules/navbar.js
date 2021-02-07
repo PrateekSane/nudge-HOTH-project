@@ -6,7 +6,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
 
-const NavBar = () => {
+const NavBar = (props) => {
   return (
     <View style={styles.icons}>
       <TouchableOpacity onPress={() => props.navigation.navigate("Nudge")}>

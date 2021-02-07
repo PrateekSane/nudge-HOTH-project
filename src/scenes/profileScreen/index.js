@@ -3,10 +3,7 @@ import * as React from "react";
 import styles from "_styles/layout";
 import { View } from "react-native";
 import StyledButton from "_atoms/StyledButton";
-import NavLayout from "_utils/navLayout";
-
-//Icons
-import NavBar from "../../components/molecules/navBar";
+import NavBar from "_molecules/navBar";
 
 const ProfileScreen = ({ navigation }) => {
   return (
@@ -24,7 +21,7 @@ const ProfileScreen = ({ navigation }) => {
         title="Find Friends"
         onPress={() => navigation.navigate("Friends")}
       />
-      <NavBar />
+      <NavBar navigation={navigation} />
     </View>
   );
 };

@@ -3,11 +3,11 @@ import * as React from "react";
 import styles from "_styles/layout";
 import { View } from "react-native";
 import StyledButton from "_atoms/StyledButton";
-import NavBar from "_molecules/navBar";
+import NavLayout from "_utils/navLayout";
 
 const ProfileScreen = ({ navigation }) => {
   return (
-    <View>
+    <NavLayout navigation={navigation}>
       {/* navigate to other pages*/}
       <StyledButton
         title="My Nudges"
@@ -21,8 +21,7 @@ const ProfileScreen = ({ navigation }) => {
         title="Find Friends"
         onPress={() => navigation.navigate("Friends")}
       />
-      <NavBar navigation={navigation} />
-    </View>
+    </NavLayout>
   );
 };
 

@@ -2,7 +2,7 @@
 import * as React from "react";
 import { View } from "react-native";
 import MyList from "_molecules/flatList";
-import NavBar from "_molecules/navBar";
+import NavLayout from "_utils/navLayout";
 
 const HabitsScreen = ({ navigation }) => {
   const habits = [
@@ -20,10 +20,9 @@ const HabitsScreen = ({ navigation }) => {
     },
   ];
   return (
-    <View>
+    <NavLayout navigation={navigation}>
       <MyList array={habits} />
-      <NavBar navigation={navigation} />
-    </View>
+    </NavLayout>
   );
 };
 

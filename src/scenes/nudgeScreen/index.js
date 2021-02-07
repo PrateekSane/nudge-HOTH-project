@@ -3,7 +3,7 @@ import * as React from "react";
 
 import { View } from "react-native";
 import MyList from "../../components/molecules/flatList";
-import NavBar from "../../components/molecules/navBar";
+import NavLayout from "_utils/navLayout";
 
 const NudgeScreen = ({ navigation }) => {
   const nudges = [
@@ -21,10 +21,9 @@ const NudgeScreen = ({ navigation }) => {
     },
   ];
   return (
-    <View>
+    <NavLayout navigation={navigation}>
       <MyList array={nudges} />
-      <NavBar navigation={navigation} />
-    </View>
+    </NavLayout>
   );
 };
 

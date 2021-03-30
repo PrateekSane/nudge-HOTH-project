@@ -1,6 +1,6 @@
 # Nudge - a social self-care app
   
-Submission for UCLA ACM's Hack off the Hill (2021).
+:sparkles:**Best Hack Overall**:sparkles: for UCLA ACM's Hack off the Hill (2021).
   
 ## Inspiration  
   
